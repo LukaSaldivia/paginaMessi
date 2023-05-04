@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap');
+
+:root{
+    --white:#fff;
+    --gold:#fe0;
+}
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection{
+    background-color: #1d91c7;
+    color: inherit;
+}
+
+body{
+    max-width: 100%;
+    min-height: 100vh;
+opacity: 1;
+background-size: 24px 24px;
+background-image:  repeating-linear-gradient(to right, #222, #222 1.2000000000000002px, #000 1.2000000000000002px, #000);
+    background-color: #000;
+overflow-x: hidden;
+color: var(--white);
+font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+header{
+    width: 100%;
+    background-color: #000000aa;
+    backdrop-filter: blur(25px);
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
+    padding: .6rem 2rem;
+    box-shadow: 0 3px 3px 2px #00000088;
+    display: flex;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 2;
+
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+header ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--gold);
+    transition: .2s;
+}
+
+header ul li a:hover:before{
+    width: 100%;
+}
+
+
+header div.logo a{
+    color: var(--gold);
+    text-decoration: none;
+    position: absolute;
+    transition: .2s;
+}
+
+header div.logo a:last-child{
+    scale: 0;
+}
+
+header div.logo{
+    transition: .2s;
+}
+
+
+header div.logo:hover a:first-child{
+    opacity: 0;
+}
+
+header div.logo:hover a:last-child{
+    scale: 1;
+}
+
+
+
+footer{
+    background-color: black;
+    border-top: 1px solid var(--white);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer section{
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+footer section h2{
+    position: relative;
+}
+
+footer section h2::before{
+    position: absolute;
+    content: '';
+    background-color: var(--gold);
+    height: 100%;
+    aspect-ratio: 1/3;
+    left: -1.5rem;
+}
+
+footer section ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+footer section ul li a{
+    text-decoration: none;
+    color: var(--white);
+    opacity: .5;
+    transition: .2s;
+}
+
+footer section ul li a:hover{
+    color: var(--gold);
+    text-decoration: underline;
+    opacity: 1;
+}
+
+
+/*  */
+
+input:focus{
+    outline: unset;
+}
