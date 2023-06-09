@@ -271,6 +271,7 @@ input:focus{
         background-color: transparent;
         flex-direction: row;
         width: fit-content;
+        height: unset;
     }
 
     header ul li{
