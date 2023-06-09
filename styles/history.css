@@ -1,0 +1,53 @@
+@import url(general.css);
+
+
+img{
+    max-width:100%;
+    margin: 0 auto;
+
+    transition: .3s;
+    scale: .95;
+    border: 3px solid var(--gold);
+    border-radius: 5px;
+    outline: 1px solid var(--gold);
+    outline-offset: 4px;
+    object-fit: cover;
+}
+
+
+/* Cada párrafo */
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+section > div{
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+
+@media  (min-width : 1024px){
+img{
+    max-width:50%;
+    filter: grayscale(100%);
+}
+
+img:hover{
+    filter: grayscale(0);
+}
+
+section > div{
+    flex-direction: row;
+}
+    
+/* Cada párrafo par se invierte el orden */
+section > div:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+}

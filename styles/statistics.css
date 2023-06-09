@@ -1,0 +1,165 @@
+@import url(general.css);
+
+/* Contenedor de contenedores de tablas (Clubes y Selección)*/
+.tablas{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin:0 0 2rem 0;
+}
+
+/*  */
+table{
+    border:1px solid var(--gold);
+    background-color: black;
+    border-collapse: collapse;
+}
+
+table tr{
+    transition: .2s;
+}
+table th{
+    padding: .5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+table td{
+    padding: .5rem;
+    border-left: 1px solid var(--gold);
+    text-align: center;
+    min-width: 3rem;
+}
+
+table :is(th,td).notImportant{
+    display: none;
+}
+
+
+/* Modificar tables rows (tr) que no tengan th (que no sean cabeceras) */
+table tr:nth-child(even):not(:has(th)){
+    background-color: #FFFFFF0F;
+}
+table tr:nth-child(odd):not(:has(th)){
+    background-color: #FFFFFF15;
+}
+
+
+
+table tr:not(:has(th)):hover{
+    background-color: 
+    #000;
+}
+
+/* Estilo para tarjetas de tablas */
+
+.tarjeta{
+    padding: .2rem;
+    width: .5rem;
+    height: .9rem;
+    border-radius: 2px;
+    margin: 0 auto;
+
+}
+
+.roja{
+    background-color: red;
+    
+}
+.amarilla{
+    background-color: yellow;
+}
+
+/* Contenedor de tabla individual */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* p cabeceras de tablas */
+.seleccion {   
+    background: linear-gradient(to right, rgb(23, 197, 188),rgb(255, 255, 255),rgb(23, 197, 188));
+}
+
+.clubes{
+    background: linear-gradient(to right, rgb(19, 21, 158),rgb(197, 0, 33),rgb(19, 21, 158));
+}
+
+.premio{
+    background: linear-gradient(to right, var(--gold),white);
+}
+
+/* Estilos de los p de titulo */
+.nombre{
+    font-size: large;
+    font-weight: bolder;
+    background-size: 200% 200%;
+    animation: rainbow 2s ease-in-out infinite alternate;
+    -webkit-background-clip:text;
+    background-clip: text;
+    color:white;
+    transition: color .2s ease-in-out;
+    text-transform: uppercase;
+    background-position: left;
+    transition: .2s;
+    cursor: default;
+}
+.nombre:hover{
+    color:rgba(0,0,0,0);
+    scale: 1.06;
+}
+
+@keyframes rainbow { 
+    to{
+        background-position: right;
+    }
+  }
+
+
+  /* Cuadro flotante sobre datos de premios */
+#message-box{
+    transition: .6s ease-out;
+    position: fixed;
+    z-index: -2;
+    background-color: black;
+    padding: .8rem 1.2rem;
+    border: .1rem solid var(--white);
+    box-shadow: 0 0 0 .3rem black;
+    display: none;
+    max-width: 10rem;
+    grid-template-rows: 0fr;
+}
+
+#message-box div{
+    overflow: hidden;
+}
+
+
+@media  (min-width : 1024px){
+
+table :is(th,td).notImportant{
+    display: table-cell;
+}
+
+    
+#message-box.active{
+    display: grid;
+    place-content: center;
+    z-index: 1;
+    opacity: 0;
+    animation: appear .2s linear forwards;
+    animation-delay: .1s;
+}
+
+/* Efecto wrapper (apertura hacia abajo) */
+@keyframes appear{
+    to{
+        grid-template-rows: 1fr;
+        opacity: 1;
+    }
+}
+
+}
