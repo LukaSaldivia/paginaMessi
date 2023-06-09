@@ -103,20 +103,21 @@ header ul{
     list-style: none;
     display: flex;
     
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
 
     
     flex-direction: column;
     position: fixed;
     top: 3.2rem;
-    right: -100%;
+    left: 100%;
     background-color: black;
-    width: 100%;
-    border-collapse: collapse;
+    transition: .2s;
 }
 
 header ul li{
-    border: 1px solid var(--white);
-    /* padding: 1rem; */
+    border-bottom: 1px solid var(--white);
 }
 
 
