@@ -159,12 +159,6 @@ div.card,#carrito{
 
 /* Carrito */
 
-#carrito{
-    background-color: white;
-    color: black;
-    overflow: hidden;
-    border-collapse: collapse;    
-}
 
 div#carrito-container{
     position: fixed;
@@ -177,14 +171,21 @@ div#carrito-container{
     scale: 0;
     width: fit-content;
     border-radius: 10px 0 10px 10px;
-    aspect-ratio: 4/3;
-    transition: .2s;
+    transition: scale .2s;
     transform-origin: top right;
 }
 
 div#carrito-container.active{
     scale: 1;
 }
+
+#carrito{
+    background-color: white;
+    color: black;
+    overflow: hidden;
+    border-collapse: collapse;    
+}
+
 
 tr>*{
     padding: 1rem;
