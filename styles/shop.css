@@ -165,7 +165,7 @@ div#carrito-container{
     z-index: 2;
     right: 4rem;
     top: 30%;
-    max-height: 30vh;
+    max-height: 60%;
     max-width: 70vw;
     overflow: auto;
     scale: 0;
@@ -231,12 +231,6 @@ td:not(.not-number){
     scale: 1.2;
 }
 
-
-div#carrito-container{
-        aspect-ratio:unset;
-        max-width: unset;
-        max-height: 60vh;
-}    
 
 div.card{
     filter: brightness(80%);
